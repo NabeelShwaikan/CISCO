@@ -1,1 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08131f" />
+    <meta name="description" content="قاموس عربي سريع لمصطلحات Cisco CCNA المستخرجة من المجلدين الرسميين." />
+    <title>قاموس مصطلحات Cisco</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#searchInput">انتقل إلى البحث</a>
 
+    <header class="topbar">
+      <div class="shell topbar__inner">
+        <a class="brand" href="#" aria-label="العودة إلى بداية القاموس">
+          <span class="brand__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="brand__copy">
+            <strong>قاموس Cisco</strong>
+            <small>مرجع المصطلحات التقنية</small>
+          </span>
+        </a>
+
+        <div class="topbar__actions">
+          <span class="count-pill"><b id="totalTerms">912</b> مصطلحًا</span>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="تبديل المظهر" title="تبديل المظهر">
+            <span class="theme-icon" aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="pageTitle">
+        <div class="hero__eyebrow"><span></span> مرجع عربي لمصطلحات الشبكات</div>
+        <h1 id="pageTitle">افهم المصطلح، بسرعة.</h1>
+        <p>ابحث بالاختصار أو الاسم العربي أو الإنجليزي في مصطلحات الكتابين الرسميين لـCCNA 200-301.</p>
+
+        <div class="search-card">
+          <label class="sr-only" for="searchInput">ابحث في المصطلحات</label>
+          <span class="search-card__icon" aria-hidden="true">⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            inputmode="search"
+            autocomplete="off"
+            placeholder="اكتب مصطلحًا، اختصارًا أو معنى عربيًا…"
+            aria-describedby="searchHint"
+          />
+          <kbd class="search-card__key" aria-hidden="true">/</kbd>
+          <button id="clearSearch" class="search-card__clear" type="button" aria-label="مسح البحث">×</button>
+        </div>
+        <p id="searchHint" class="search-hint">مثال: VLAN، بروتوكول التوجيه، Wireless LAN</p>
+
+        <div class="recent" id="recentWrap" hidden>
+          <span>شوهدت مؤخرًا</span>
+          <div id="recentTerms" class="recent__list"></div>
+        </div>
+      </section>
+
+      <section class="workspace shell" aria-label="نتائج قاموس المصطلحات">
+        <div class="filterbar">
+          <div class="filterbar__group">
+            <label class="select-field">
+              <span>المجال</span>
+              <select id="categoryFilter">
+                <option value="">جميع المجالات</option>
+              </select>
+            </label>
+
+            <label class="select-field">
+              <span>النوع</span>
+              <select id="typeFilter">
+                <option value="">جميع الأنواع</option>
+              </select>
+            </label>
+
+            <label class="toggle-field">
+              <input id="abbreviationOnly" type="checkbox" />
+              <span aria-hidden="true"></span>
+              اختصارات فقط
+            </label>
+
+            <button id="favoritesFilter" class="filter-button" type="button" aria-pressed="false">
+              <span aria-hidden="true">☆</span> المفضلة
+            </button>
+          </div>
+
+          <button id="resetFilters" class="reset-button" type="button">مسح الفلاتر</button>
+        </div>
+
+        <div class="alphabet" id="alphabetFilter" aria-label="التصفية حسب الحرف الإنجليزي"></div>
+
+        <div class="results-meta">
+          <p id="resultAnnouncement" aria-live="polite"><strong id="resultCount">0</strong> نتيجة</p>
+          <label>
+            <span class="sr-only">ترتيب النتائج</span>
+            <select id="sortSelect" class="sort-select">
+              <option value="relevance">الأكثر صلة</option>
+              <option value="en">أبجديًا بالإنجليزية</option>
+              <option value="ar">أبجديًا بالعربية</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="dictionary-layout">
+          <section class="results-panel" aria-label="قائمة المصطلحات">
+            <div id="resultsList" class="results-list" role="listbox" aria-label="نتائج البحث"></div>
+            <div id="emptyState" class="empty-state" hidden>
+              <span aria-hidden="true">⌕</span>
+              <h2>لم نجد هذا المصطلح</h2>
+              <p>جرّب كتابة الاختصار أو جزءًا من الاسم، أو امسح الفلاتر.</p>
+              <button id="emptyReset" type="button">عرض جميع المصطلحات</button>
+            </div>
+            <button id="loadMore" class="load-more" type="button">عرض المزيد</button>
+          </section>
+
+          <aside id="detailPanel" class="detail-panel" aria-label="تفاصيل المصطلح" aria-live="polite">
+            <button id="closeDetails" class="detail-panel__close" type="button" aria-label="إغلاق التفاصيل">×</button>
+            <div id="detailContent" class="detail-content"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="mobileBackdrop" class="mobile-backdrop" hidden></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="footer shell">
+      <p>مرجع تعليمي سريع مبني على المصطلحات الواردة في دليلي CCNA 200-301 الرسميين.</p>
+      <span>الإصدار 1.0.0</span>
+    </footer>
+
+    <script src="data/cisco_terms.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
