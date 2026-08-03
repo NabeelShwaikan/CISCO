@@ -13,6 +13,16 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem('cisco-training-theme');
+        if (savedTheme === 'dark' || savedTheme === 'light') {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch (_) {}
+    })();
+  </script>
   <style>
     :root{
       --bg:#f5f8fb;
@@ -176,11 +186,23 @@
     (() => {
       const root = document.documentElement;
       const button = document.getElementById('themeButton');
+      const themeKey = 'cisco-training-theme';
+
+      const syncThemeButton = () => {
+        const dark = root.dataset.theme === 'dark';
+        button.textContent = dark ? '☀' : '◐';
+        button.setAttribute('aria-label', dark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن');
+      };
+
+      syncThemeButton();
+
       button.addEventListener('click', () => {
         const dark = root.dataset.theme !== 'dark';
         root.dataset.theme = dark ? 'dark' : 'light';
-        button.textContent = dark ? '☀' : '◐';
-        button.setAttribute('aria-label', dark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن');
+        try {
+          localStorage.setItem(themeKey, root.dataset.theme);
+        } catch (_) {}
+        syncThemeButton();
       });
     })();
   </script>
