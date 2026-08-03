@@ -2,7 +2,7 @@
   "metadata": {
     "id": "ccna-200-301-knowledge-map",
     "schema_version": "1.0.0",
-    "dataset_version": "0.1.0",
+    "dataset_version": "0.2.0-dev.1",
     "title_ar": "قاعدة المعرفة الشاملة لخريطة مفاهيم CCNA 200-301",
     "title_en": "CCNA 200-301 Comprehensive Concept Knowledge Map",
     "generated_at": "2026-07-25T06:58:55.154758+00:00",
@@ -31,7 +31,27 @@
       "Hard cross-chapter dependencies are curated pedagogical prerequisites.",
       "No book paragraphs, figures, or quiz questions are reproduced."
     ],
-    "review_state": "COMPREHENSIVE_MACHINE_VALIDATED_DRAFT"
+    "review_state": "PARTIAL_SOURCE_GROUNDED_EDITORIAL_DRAFT",
+    "last_modified_at": "2026-07-28T09:21:41.335566+00:00",
+    "revision_history": [
+      {
+        "version": "0.2.0-dev.1",
+        "applied_at": "2026-07-28T09:21:41.335566+00:00",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "patch_sha256": "52e8b61f6471123f8bcf910da6c8d38289ced6c932f79066d60029a75057bf26",
+        "chapter_id": "v1-c01",
+        "topics_revised": 21,
+        "changed_editorial_fields": 84,
+        "status": "AWAITING_EXPERT_REVIEW"
+      }
+    ],
+    "content_development": {
+      "chapters_source_grounded": 1,
+      "chapters_total": 48,
+      "topics_source_grounded": 21,
+      "topics_total": 874,
+      "current_patch_id": "v1-c01-editorial-2026-07-28"
+    }
   },
   "sources": [
     {
@@ -1528,7 +1548,7 @@
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "مدخل منظم إلى مقدمة في شبكات TCP/IP يربط الأساس النظري بالتطبيقات المطلوبة ضمن مسار CCNA.",
+      "summary_ar": "يؤسس هذا الفصل لفهم طريقة انتقال البيانات بين الأجهزة، ويعرض نموذج TCP/IP وطبقاته الخمس ومبادئ العنونة والتوجيه والتغليف، ثم يربط مصطلحاته بالمصطلحات الشائعة في نموذج OSI.",
       "type": "OVERVIEW",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -1544,10 +1564,11 @@
         "section_heading_en": "Introduction to TCP/IP Networking"
       },
       "mastery_evidence_ar": [
-        "يشرح مقدمة في شبكات TCP/IP بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز مقدمة في شبكات TCP/IP عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يرتب طبقات نموذج TCP/IP الخمس ويذكر الوظيفة العامة لكل طبقة.",
+        "يشرح المسار المفاهيمي للبيانات من التطبيق حتى الإرسال الفيزيائي.",
+        "يربط بين المصطلحات Segment وPacket وFrame والطبقات التي تنشئها."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح مقدمة في شبكات TCP/IP في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم تتبع طلب صفحة ويب من المتصفح إلى الشبكة، مع تسمية الطبقات ووحدة البيانات عند طبقات النقل والشبكة وربط البيانات.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -1568,9 +1589,22 @@
       "review": {
         "source_heading": "VERIFIED",
         "arabic_translation": "HUMAN_CURATED",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": false
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4227,9 +4261,9 @@
       "slug": "perspectives-on-networking",
       "fingerprint": "ab6709102696",
       "title_en": "Perspectives on Networking",
-      "title_ar": "مدخل إلى الشبكات",
+      "title_ar": "منظور المستخدم والمهندس إلى الشبكات",
       "aliases": [],
-      "summary_ar": "يوضح هذا المفهوم مدخل إلى الشبكات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يميز بين رؤية المستخدم الذي يستفيد من خدمات الشبكة ورؤية المهندس الذي يبني البنية اللازمة لنقل البيانات، مع توضيح أمثلة الشبكات المنزلية وشبكات المكاتب الصغيرة والشبكات المؤسسية.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4245,10 +4279,11 @@
         "section_heading_en": "Perspectives on Networking"
       },
       "mastery_evidence_ar": [
-        "يشرح مدخل إلى الشبكات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز مدخل إلى الشبكات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يقارن بين استخدام الشبكة من منظور المستخدم وبنائها من منظور مهندس الشبكات.",
+        "يميز بين الشبكة المنزلية وشبكة SOHO والشبكة المؤسسية.",
+        "يلخص وظيفة الشبكة الأساسية في نقل البيانات بين الأجهزة."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح مدخل إلى الشبكات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اعرض سيناريو لموظف يستخدم شبكة لاسلكية داخل منشأة، واطلب من المتعلم وصف ما يراه المستخدم وما يجب أن يخطط له مهندس الشبكات.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4266,10 +4301,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4277,11 +4325,11 @@
       "slug": "tcp-ip-networking-model",
       "fingerprint": "d0d0ab502f1d",
       "title_en": "TCP/IP Networking Model",
-      "title_ar": "TCP/IP الشبكات النموذج",
+      "title_ar": "نموذج شبكات TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP/IP الشبكات النموذج ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يعرّف نموذج الشبكات بوصفه مجموعة مترابطة من البروتوكولات والمعايير التي تحدد الوظائف المنطقية والفيزيائية اللازمة لعمل الشبكة، وتتيح لمنتجات الشركات المختلفة العمل معًا.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4297,10 +4345,11 @@
         "section_heading_en": "TCP/IP Networking Model"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP/IP الشبكات النموذج بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP/IP الشبكات النموذج عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يعرّف نموذج الشبكات ويفرق بينه وبين البروتوكول المفرد.",
+        "يشرح كيف يساعد النموذج القياسي على توافق الأجهزة والبرمجيات بين الشركات.",
+        "يقدم مثالًا على وظيفة منطقية وأخرى فيزيائية يحددها نموذج الشبكات."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP/IP الشبكات النموذج في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم تفسير تشبيه نموذج الشبكات بالمخطط الهندسي للمبنى، ثم تحديد فائدتين عمليتين لاستخدام نموذج قياسي.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4320,10 +4369,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4331,11 +4393,11 @@
       "slug": "history-leading-to-tcp-ip",
       "fingerprint": "c07cc71273e0",
       "title_en": "History Leading to TCP/IP",
-      "title_ar": "التاريخ Leading إلى TCP/IP",
+      "title_ar": "التطور التاريخي وصولًا إلى TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم التاريخ Leading إلى TCP/IP ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يستعرض الانتقال من نماذج الشبكات المغلقة الخاصة بكل شركة إلى نماذج مفتوحة ومحايدة، ويوضح كيف أصبح TCP/IP النموذج السائد بينما بقي نموذج OSI مرجعًا مهمًا للمصطلحات.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4351,10 +4413,11 @@
         "section_heading_en": "History Leading to TCP/IP"
       },
       "mastery_evidence_ar": [
-        "يشرح التاريخ Leading إلى TCP/IP بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز التاريخ Leading إلى TCP/IP عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يوضح المشكلة التي سببتها نماذج الشبكات الخاصة بالشركات.",
+        "يقارن بإيجاز بين مساري تطوير OSI وTCP/IP.",
+        "يفسر سبب استمرار استخدام مصطلحات OSI رغم سيادة TCP/IP."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح التاريخ Leading إلى TCP/IP في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم رسم خط زمني مختصر يبدأ بالنماذج الخاصة بالشركات وينتهي بسيادة TCP/IP، مع بيان دور OSI الحالي.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4374,10 +4437,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4385,11 +4461,11 @@
       "slug": "overview-of-the-tcp-ip-networking-model",
       "fingerprint": "75cca19dd980",
       "title_en": "Overview of the TCP/IP Networking Model",
-      "title_ar": "نظرة عامة على TCP/IP الشبكات النموذج",
+      "title_ar": "نظرة عامة على نموذج شبكات TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم نظرة عامة على TCP/IP الشبكات النموذج ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يعرض البنية ذات الطبقات الخمس في نموذج TCP/IP: التطبيقات، والنقل، والشبكة، وربط البيانات، والطبقة الفيزيائية، ويوضح أن كل طبقة تجمع بروتوكولات ومعايير تؤدي مجموعة محددة من الوظائف.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4405,10 +4481,11 @@
         "section_heading_en": "Overview of the TCP/IP Networking Model"
       },
       "mastery_evidence_ar": [
-        "يشرح نظرة عامة على TCP/IP الشبكات النموذج بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز نظرة عامة على TCP/IP الشبكات النموذج عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يرتب طبقات TCP/IP الخمس من الأعلى إلى الأسفل.",
+        "يسند وظيفة عامة صحيحة إلى كل طبقة.",
+        "يصنف HTTP وTCP وIP وEthernet ضمن طبقاتها الصحيحة."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح نظرة عامة على TCP/IP الشبكات النموذج في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "زوّد المتعلم بأسماء HTTP وTCP وIP وEthernet وWi-Fi، واطلب منه توزيعها على طبقات TCP/IP وتبرير كل اختيار.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4428,10 +4505,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4439,11 +4529,11 @@
       "slug": "tcp-ip-application-layer",
       "fingerprint": "cb16aeb00ed3",
       "title_en": "TCP/IP Application Layer",
-      "title_ar": "TCP/IP طبقة التطبيقات",
+      "title_ar": "طبقة التطبيقات في نموذج TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP/IP طبقة التطبيقات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "توفر بروتوكولات طبقة التطبيقات الخدمات التي تحتاجها البرامج للتعامل مع الشبكة؛ فهي لا تعرّف التطبيق نفسه، بل تحدد كيفية طلب الخدمة وتبادل بياناتها، كما يفعل HTTP بين المتصفح وخادم الويب.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4459,10 +4549,11 @@
         "section_heading_en": "TCP/IP Application Layer"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP/IP طبقة التطبيقات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP/IP طبقة التطبيقات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يفرق بين برنامج التطبيق وبروتوكول طبقة التطبيقات.",
+        "يشرح وظيفة طبقة التطبيقات كواجهة بين البرنامج والشبكة.",
+        "يقدم مثالًا صحيحًا لبروتوكول تطبيق والخدمة التي يقدمها."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP/IP طبقة التطبيقات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اسأل المتعلم: هل المتصفح نفسه بروتوكول؟ ثم اطلب منه توضيح العلاقة بين المتصفح وHTTP وخادم الويب.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4482,10 +4573,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4493,11 +4597,11 @@
       "slug": "http-overview",
       "fingerprint": "ebd17b30cd57",
       "title_en": "HTTP Overview",
-      "title_ar": "HTTP نظرة عامة",
+      "title_ar": "نظرة عامة على HTTP",
       "aliases": [
         "HTTP"
       ],
-      "summary_ar": "يوضح هذا المفهوم HTTP نظرة عامة ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يشرح التبادل الأساسي بين متصفح الويب والخادم: يرسل العميل طلبًا للحصول على صفحة أو ملف، ثم يعيد الخادم المحتوى المطلوب ليعرضه المتصفح.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4513,10 +4617,11 @@
         "section_heading_en": "HTTP Overview"
       },
       "mastery_evidence_ar": [
-        "يشرح HTTP نظرة عامة بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز HTTP نظرة عامة عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يحدد دور المتصفح كعميل ودور خادم الويب.",
+        "يرتب عمليتي الطلب والاستجابة بالترتيب الصحيح.",
+        "يفسر ما الذي يحدث عند طلب الصفحة الافتراضية لموقع ويب."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح HTTP نظرة عامة في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اعرض رسمًا مبسطًا لمتصفح وخادم، واطلب من المتعلم إضافة سهم الطلب وسهم الاستجابة وشرح محتوى كل منهما.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4534,10 +4639,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4545,11 +4663,11 @@
       "slug": "http-protocol-mechanisms",
       "fingerprint": "175574bd6146",
       "title_en": "HTTP Protocol Mechanisms",
-      "title_ar": "HTTP البروتوكول Mechanisms",
+      "title_ar": "آليات عمل بروتوكول HTTP",
       "aliases": [
         "HTTP"
       ],
-      "summary_ar": "يوضح هذا المفهوم HTTP البروتوكول Mechanisms ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يوضح كيف يستخدم HTTP ترويسة لطلب ملف باستخدام GET، وكيف يعيد الخادم رمز حالة مثل 200 للنجاح أو 404 لعدم العثور، ثم ينقل محتوى الملف في رسالة أو أكثر.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4565,10 +4683,11 @@
         "section_heading_en": "HTTP Protocol Mechanisms"
       },
       "mastery_evidence_ar": [
-        "يشرح HTTP البروتوكول Mechanisms بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز HTTP البروتوكول Mechanisms عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يفسر وظيفة طلب GET في HTTP.",
+        "يميز بين رمزي الحالة 200 و404.",
+        "يفرق بين معلومات ترويسة HTTP وبيانات الملف المنقول."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح HTTP البروتوكول Mechanisms في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "قدّم للمتعلم طلب GET واستجابتين برمزي 200 و404، واطلب منه تحديد النتيجة التي سيراها المستخدم في كل حالة.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4586,10 +4705,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4597,11 +4729,11 @@
       "slug": "tcp-ip-transport-layer",
       "fingerprint": "d55c140dd7b5",
       "title_en": "TCP/IP Transport Layer",
-      "title_ar": "TCP/IP طبقة النقل",
+      "title_ar": "طبقة النقل في نموذج TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP/IP طبقة النقل ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "تقدم طبقة النقل خدمات لبروتوكولات طبقة التطبيقات، ويعد TCP وUDP أشهر بروتوكولاتها؛ ويختار التطبيق خدمة النقل التي تناسب احتياجه.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4617,10 +4749,11 @@
         "section_heading_en": "TCP/IP Transport Layer"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP/IP طبقة النقل بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP/IP طبقة النقل عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يحدد موقع طبقة النقل بين طبقتي التطبيقات والشبكة.",
+        "يسمي TCP وUDP بوصفهما بروتوكولي نقل رئيسيين.",
+        "يشرح معنى أن الطبقة الأدنى تقدم خدمة للطبقة الأعلى."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP/IP طبقة النقل في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم وضع TCP وUDP وHTTP وIP في طبقاتها، ثم شرح الخدمة التي تتلقاها طبقة التطبيقات من طبقة النقل.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4640,10 +4773,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4651,11 +4797,11 @@
       "slug": "tcp-error-recovery-basics",
       "fingerprint": "3916dfc82c82",
       "title_en": "TCP Error Recovery Basics",
-      "title_ar": "TCP استرداد الأخطاء الأساسيات",
+      "title_ar": "أساسيات استعادة البيانات المفقودة في TCP",
       "aliases": [
         "TCP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP استرداد الأخطاء الأساسيات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يستخدم TCP أرقام التسلسل والإقرارات لاكتشاف البيانات التي لم تصل، ثم يطلب إعادة إرسال الجزء المفقود حتى تحصل طبقة التطبيقات على البيانات المطلوبة بصورة موثوقة.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4671,10 +4817,11 @@
         "section_heading_en": "TCP Error Recovery Basics"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP استرداد الأخطاء الأساسيات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP استرداد الأخطاء الأساسيات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يشرح دور أرقام التسلسل في اكتشاف الجزء المفقود.",
+        "يحدد متى يطلب المستقبل إعادة الإرسال.",
+        "يربط خدمة استعادة الأخطاء التي يقدمها TCP بحاجة التطبيق إلى تسليم موثوق."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP استرداد الأخطاء الأساسيات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اعرض تسلسلًا وصلت فيه القطعتان 1 و3 ولم تصل القطعة 2، واطلب من المتعلم وصف استجابة TCP والخطوة التالية عند المرسل.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4694,10 +4841,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4705,9 +4865,9 @@
       "slug": "same-layer-and-adjacent-layer-interactions",
       "fingerprint": "f492c711a969",
       "title_en": "Same-Layer and Adjacent-Layer Interactions",
-      "title_ar": "Same-Layer و Adjacent-Layer التفاعلات",
+      "title_ar": "التفاعل بين الطبقات المتناظرة والطبقات المتجاورة",
       "aliases": [],
-      "summary_ar": "يوضح هذا المفهوم Same-Layer و Adjacent-Layer التفاعلات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يفرق بين تواصل الطبقة مع نظيرتها على جهاز آخر باستخدام البروتوكول وترويساته، وبين استفادة طبقة أعلى من خدمة تقدمها الطبقة التي تليها مباشرة على الجهاز نفسه.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4723,10 +4883,11 @@
         "section_heading_en": "Same-Layer and Adjacent-Layer Interactions"
       },
       "mastery_evidence_ar": [
-        "يشرح Same-Layer و Adjacent-Layer التفاعلات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز Same-Layer و Adjacent-Layer التفاعلات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يعرف التفاعل بين الطبقات المتناظرة ويقدم مثالًا عليه.",
+        "يعرف التفاعل بين الطبقات المتجاورة ويقدم مثالًا عليه.",
+        "يصنف تواصل TCP بين جهازين وتقديم TCP خدمة استعادة الأخطاء لـHTTP تصنيفًا صحيحًا."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح Same-Layer و Adjacent-Layer التفاعلات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "قدّم مثالين: TCP مع TCP على جهازين، وHTTP يستفيد من TCP على جهاز واحد؛ واطلب تحديد نوع التفاعل في كل مثال.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4744,10 +4905,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4755,11 +4929,11 @@
       "slug": "tcp-ip-network-layer",
       "fingerprint": "68baf1afac91",
       "title_en": "TCP/IP Network Layer",
-      "title_ar": "TCP/IP طبقة الشبكة",
+      "title_ar": "طبقة الشبكة في نموذج TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP/IP طبقة الشبكة ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "تركز طبقة الشبكة على بروتوكول IP الذي يحدد العنونة والتوجيه، وبذلك تستطيع الشبكة نقل الحزم من الجهاز المرسل إلى جهاز الوجهة عبر مسار قد يضم عدة موجّهات.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4775,10 +4949,11 @@
         "section_heading_en": "TCP/IP Network Layer"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP/IP طبقة الشبكة بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP/IP طبقة الشبكة عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يحدد IP بوصفه البروتوكول الرئيس في طبقة الشبكة.",
+        "يشرح الفرق بين وظيفتي العنونة والتوجيه.",
+        "يربط طبقة الشبكة بتسليم البيانات عبر المسار الكامل بين الطرفين."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP/IP طبقة الشبكة في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اسأل المتعلم لماذا لا يكفي أن يعرف الجهاز عنوان الوجهة فقط، وما الدور الذي تضيفه عملية التوجيه إلى العنونة.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4798,10 +4973,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4809,9 +4997,9 @@
       "slug": "internet-protocol-and-the-postal-service",
       "fingerprint": "bf5577643918",
       "title_en": "Internet Protocol and the Postal Service",
-      "title_ar": "بروتوكول الإنترنت و Postal الخدمة",
+      "title_ar": "تشبيه بروتوكول IP بالخدمة البريدية",
       "aliases": [],
-      "summary_ar": "يوضح هذا المفهوم بروتوكول الإنترنت و Postal الخدمة ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يستخدم تشبيه البريد لتوضيح عمل IP: يمثل عنوان IP عنوان المستلم، وتعمل الموجّهات كمراكز فرز تستقبل الحزمة وتختار وجهتها التالية حتى تصل إلى الجهاز المقصود.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4827,10 +5015,11 @@
         "section_heading_en": "Internet Protocol and the Postal Service"
       },
       "mastery_evidence_ar": [
-        "يشرح بروتوكول الإنترنت و Postal الخدمة بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز بروتوكول الإنترنت و Postal الخدمة عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يربط عناصر تشبيه البريد بعناوين IP والموجّهات والحزم.",
+        "يوضح لماذا لا يحتاج المرسل إلى معرفة كل تفاصيل المسار.",
+        "يحدد حدود التشبيه ولا يخلط بين الرسالة البريدية والحزمة الرقمية."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح بروتوكول الإنترنت و Postal الخدمة في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم مطابقة المرسل والعنوان ومركز الفرز والمسار البريدي مع العناصر المقابلة لها في شبكة IP.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4848,10 +5037,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4859,9 +5061,9 @@
       "slug": "internet-protocol-addressing-basics",
       "fingerprint": "ecb45ae72944",
       "title_en": "Internet Protocol Addressing Basics",
-      "title_ar": "بروتوكول الإنترنت العنونة الأساسيات",
+      "title_ar": "أساسيات العنونة ببروتوكول IP",
       "aliases": [],
-      "summary_ar": "يوضح هذا المفهوم بروتوكول الإنترنت العنونة الأساسيات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يحتاج كل مضيف يعمل بـTCP/IP إلى عنوان IP يميزه، كما تجمع العناوين في مجموعات تساعد الموجّهات على معرفة موقع الشبكة واتخاذ قرار إرسال الحزمة.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4877,10 +5079,11 @@
         "section_heading_en": "Internet Protocol Addressing Basics"
       },
       "mastery_evidence_ar": [
-        "يشرح بروتوكول الإنترنت العنونة الأساسيات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز بروتوكول الإنترنت العنونة الأساسيات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يشرح الحاجة إلى عنوان IP مميز لكل مضيف.",
+        "يتعرف على الصيغة العشرية المنقطة لعنوان IPv4.",
+        "يوضح فائدة تجميع العناوين في تسهيل قرارات التوجيه."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح بروتوكول الإنترنت العنونة الأساسيات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اعرض ثلاثة عناوين IPv4 موزعة على ثلاث مجموعات شبكية مبسطة، واطلب من المتعلم تحديد المجموعة التي ينتمي إليها كل عنوان.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -4898,10 +5101,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4909,11 +5125,11 @@
       "slug": "ip-routing-basics",
       "fingerprint": "2cbe3a0e2cfa",
       "title_en": "IP Routing Basics",
-      "title_ar": "IP التوجيه الأساسيات",
+      "title_ar": "أساسيات توجيه حزم IP",
       "aliases": [
         "IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم IP التوجيه الأساسيات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يرسل المضيف الحزمة إلى موجّه قريب، ثم يفحص كل موجّه عنوان IP للوجهة ويقارنه بمساراته المعروفة ليختار القفزة التالية، وتتكرر العملية حتى تصل الحزمة إلى الشبكة الوجهة.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4929,11 +5145,11 @@
         "section_heading_en": "IP Routing Basics"
       },
       "mastery_evidence_ar": [
-        "يشرح IP التوجيه الأساسيات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز IP التوجيه الأساسيات عن مفهوم قريب ويقدم مثالًا صحيحًا.",
-        "يختار أمر تحقق مناسبًا مثل show ip route ويفسر مخرجاته."
+        "يتتبع حزمة IP عبر مضيف وموجّهين حتى الوجهة.",
+        "يفسر دور عنوان الوجهة في قرار كل موجّه.",
+        "يستخدم الأمر show ip route لتحديد المسار المطابق لعنوان وجهة."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح IP التوجيه الأساسيات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "قدّم مخططًا من مضيف وموجّهين وشبكة وجهة، واطلب من المتعلم وصف القرار الذي تتخذه كل عقدة وتحديد الأمر الذي يعرض جدول التوجيه.",
       "commands": [
         "show ip route",
         "show ip protocols"
@@ -4941,7 +5157,7 @@
       "lab": {
         "suitable": true,
         "environment": "Packet Tracer or Cisco Modeling Labs",
-        "prompt_ar": "أنشئ سيناريو صغيرًا يطبق IP التوجيه الأساسيات، احفظ الحالة الابتدائية، نفّذ التغيير، ثم وثّق أمر التحقق والنتيجة قبل وبعد."
+        "prompt_ar": "ابنِ شبكة صغيرة من موجّهين وشبكتين طرفيتين، ثم أرسل حركة اختبار بين الطرفين واستخدم show ip route لتحديد المسار الذي اعتمد عليه كل موجّه. وثّق عنوان الوجهة والقفزة التالية ونتيجة الاختبار."
       },
       "exam_alignment": {
         "v1.1": [],
@@ -4954,10 +5170,24 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "lab": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -4965,11 +5195,11 @@
       "slug": "tcp-ip-data-link-and-physical-layers",
       "fingerprint": "e965f643a534",
       "title_en": "TCP/IP Data-Link and Physical Layers",
-      "title_ar": "TCP/IP ربط البيانات و الطبقات الفيزيائية",
+      "title_ar": "طبقة ربط البيانات والطبقة الفيزيائية في TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم TCP/IP ربط البيانات و الطبقات الفيزيائية ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "تتعاون طبقة ربط البيانات والطبقة الفيزيائية لإيصال الحزمة عبر وصلة واحدة؛ تغلف الأولى حزمة IP داخل إطار، بينما تحول الثانية البتات إلى إشارات تنتقل عبر الوسط الفيزيائي.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -4985,10 +5215,11 @@
         "section_heading_en": "TCP/IP Data-Link and Physical Layers"
       },
       "mastery_evidence_ar": [
-        "يشرح TCP/IP ربط البيانات و الطبقات الفيزيائية بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز TCP/IP ربط البيانات و الطبقات الفيزيائية عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يفرق بين وظيفة طبقة ربط البيانات ووظيفة الطبقة الفيزيائية.",
+        "يشرح عمليتي التغليف وفك التغليف عند طرفي الوصلة.",
+        "يرتب إنشاء الإطار وإرسال البتات واستقبالها وفك الإطار."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح TCP/IP ربط البيانات و الطبقات الفيزيائية في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اطلب من المتعلم شرح ما يحدث لحزمة IP منذ تسليمها لطبقة ربط البيانات في المرسل حتى استخراجها من الإطار عند الموجّه التالي.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5008,10 +5239,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -5019,9 +5263,9 @@
       "slug": "data-encapsulation-terminology",
       "fingerprint": "082b609be4b8",
       "title_en": "Data Encapsulation Terminology",
-      "title_ar": "تغليف البيانات المصطلحات",
+      "title_ar": "مصطلحات تغليف البيانات",
       "aliases": [],
-      "summary_ar": "يوضح هذا المفهوم تغليف البيانات المصطلحات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "التغليف هو إضافة كل طبقة ترويساتها، وقد تضيف طبقة ربط البيانات ذيلًا أيضًا، حول البيانات القادمة من الطبقة الأعلى حتى تصبح جاهزة للإرسال على الوسط الفيزيائي.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -5037,10 +5281,11 @@
         "section_heading_en": "Data Encapsulation Terminology"
       },
       "mastery_evidence_ar": [
-        "يشرح تغليف البيانات المصطلحات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز تغليف البيانات المصطلحات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يعرف التغليف ويفرق بين الترويسة والذيل.",
+        "يرتب خطوات تغليف بيانات التطبيق عبر طبقات النقل والشبكة وربط البيانات.",
+        "يشرح ما الذي تضيفه كل طبقة إلى البيانات التي تستلمها."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح تغليف البيانات المصطلحات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "زوّد المتعلم ببيانات تطبيق خام، واطلب منه رسم الإضافات المتتابعة لـTCP ثم IP ثم إطار ربط البيانات حتى مرحلة إرسال البتات.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5058,10 +5303,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -5069,11 +5327,11 @@
       "slug": "names-of-tcp-ip-messages",
       "fingerprint": "d34b20714770",
       "title_en": "Names of TCP/IP Messages",
-      "title_ar": "الأسماء لـ TCP/IP الرسائل",
+      "title_ar": "تسميات وحدات البيانات في TCP/IP",
       "aliases": [
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم كيفية قراءة وتمثيل الأسماء لـ TCP/IP الرسائل واستخدامه لاستنتاج حالة الشبكة أو قرار الإعداد المناسب.",
+      "summary_ar": "تختلف تسمية وحدة البيانات بحسب الطبقة التي يجري التركيز عليها: Segment في طبقة النقل، وPacket في طبقة الشبكة، وFrame في طبقة ربط البيانات، بينما تسمى الحمولة الداخلية عمومًا بيانات.",
       "type": "REPRESENTATIONAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -5089,10 +5347,11 @@
         "section_heading_en": "Names of TCP/IP Messages"
       },
       "mastery_evidence_ar": [
-        "يقرأ تمثيل الأسماء لـ TCP/IP الرسائل قراءة صحيحة ويشرح عناصره الأساسية.",
-        "يستنتج قرارًا شبكيًا صحيحًا من البيانات المعروضة."
+        "يربط Segment بطبقة النقل وPacket بطبقة الشبكة وFrame بطبقة ربط البيانات.",
+        "يحدد الترويسة والحمولة والذيل داخل رسم تغليف.",
+        "يفسر لماذا تسمى محتويات الوحدة الداخلية بيانات عند التركيز على طبقة معينة."
       ],
-      "assessment_prompt_ar": "اعرض مثالًا مبسطًا لـالأسماء لـ TCP/IP الرسائل واطلب من المتعلم تفسير عنصرين منه واستخلاص نتيجة واحدة.",
+      "assessment_prompt_ar": "اعرض ثلاثة رسومات لترويسة TCP وترويسة IP وإطار Ethernet، واطلب تسمية كل وحدة بيانات وتحديد الحمولة التي تحتويها.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5112,10 +5371,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -5123,11 +5395,11 @@
       "slug": "osi-networking-model-and-terminology",
       "fingerprint": "4f0e368a6dc8",
       "title_en": "OSI Networking Model and Terminology",
-      "title_ar": "OSI الشبكات النموذج و المصطلحات",
+      "title_ar": "نموذج OSI ومصطلحاته",
       "aliases": [
         "OSI"
       ],
-      "summary_ar": "يوضح هذا المفهوم OSI الشبكات النموذج و المصطلحات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "لم يصبح OSI نموذج التشغيل السائد بدل TCP/IP، لكن أسماء طبقاته وأرقامها بقيت مستخدمة في وثائق الشبكات ووصف البروتوكولات والأجهزة، ولذلك يعد فهم مصطلحاته ضروريًا.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -5143,10 +5415,11 @@
         "section_heading_en": "OSI Networking Model and Terminology"
       },
       "mastery_evidence_ar": [
-        "يشرح OSI الشبكات النموذج و المصطلحات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز OSI الشبكات النموذج و المصطلحات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يفسر سبب دراسة OSI رغم عدم استخدام حزمة بروتوكولاته بوصفها النموذج السائد.",
+        "يميز بين النموذج المرجعي وحزمة البروتوكولات المستخدمة فعليًا.",
+        "يقدم مثالًا على مصطلح شبكي حديث يعتمد ترقيم طبقات OSI."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح OSI الشبكات النموذج و المصطلحات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اسأل المتعلم لماذا يوصف بروتوكول تطبيق بأنه بروتوكول طبقة سابعة مع أن الشبكات الفعلية تستخدم TCP/IP.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5164,10 +5437,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -5175,12 +5461,12 @@
       "slug": "comparing-osi-and-tcp-ip-layer-names-and-numbers",
       "fingerprint": "d9f3fb1037b2",
       "title_en": "Comparing OSI and TCP/IP Layer Names and Numbers",
-      "title_ar": "مقارنة OSI و TCP/IP الطبقة الأسماء و الأعداد",
+      "title_ar": "مقارنة أسماء طبقات OSI وTCP/IP وأرقامها",
       "aliases": [
         "OSI",
         "TCP/IP"
       ],
-      "summary_ar": "يوضح هذا المفهوم مقارنة OSI و TCP/IP الطبقة الأسماء و الأعداد ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يقارن بين طبقات OSI السبع ونموذج TCP/IP ذي الطبقات الخمس، مع بيان تطابق الطبقات الأربع السفلى عمومًا وتجميع TCP/IP لوظائف الجلسة والعرض والتطبيق في طبقة تطبيق واحدة.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -5196,10 +5482,11 @@
         "section_heading_en": "Comparing OSI and TCP/IP Layer Names and Numbers"
       },
       "mastery_evidence_ar": [
-        "يشرح مقارنة OSI و TCP/IP الطبقة الأسماء و الأعداد بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز مقارنة OSI و TCP/IP الطبقة الأسماء و الأعداد عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يرتب طبقات OSI السبع بأرقامها.",
+        "يطابق الطبقات الأربع السفلى بين OSI وTCP/IP.",
+        "يشرح كيف تقابل طبقة التطبيقات في TCP/IP الطبقات 5 إلى 7 في OSI."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح مقارنة OSI و TCP/IP الطبقة الأسماء و الأعداد في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "أعط المتعلم جدولًا ناقصًا يقارن OSI وTCP/IP، واطلب منه إكمال أسماء الطبقات وأرقامها وموضع دمج الطبقات العليا.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5219,10 +5506,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
@@ -5230,11 +5530,11 @@
       "slug": "osi-data-encapsulation-terminology",
       "fingerprint": "4102655fb79e",
       "title_en": "OSI Data Encapsulation Terminology",
-      "title_ar": "OSI تغليف البيانات المصطلحات",
+      "title_ar": "مصطلحات تغليف البيانات في نموذج OSI",
       "aliases": [
         "OSI"
       ],
-      "summary_ar": "يوضح هذا المفهوم OSI تغليف البيانات المصطلحات ودوره وعلاقته بالمفاهيم الأخرى ضمن أساسيات تشغيل الشبكات وإدارتها.",
+      "summary_ar": "يستخدم نموذج OSI مصطلح وحدة بيانات البروتوكول PDU بصورة عامة، وتسمى الوحدة بحسب رقم الطبقة مثل L3PDU لبيانات الطبقة الثالثة وL2PDU لبيانات الطبقة الثانية.",
       "type": "CONCEPTUAL",
       "difficulty": "FOUNDATIONAL",
       "domain_id": "v1-p1",
@@ -5250,10 +5550,11 @@
         "section_heading_en": "OSI Data Encapsulation Terminology"
       },
       "mastery_evidence_ar": [
-        "يشرح OSI تغليف البيانات المصطلحات بلغته ويبين الغرض منه داخل الشبكة.",
-        "يميز OSI تغليف البيانات المصطلحات عن مفهوم قريب ويقدم مثالًا صحيحًا."
+        "يعرف مصطلح PDU ويشرح علاقته بالتغليف.",
+        "يفسر صيغة LxPDU ويستبدل x برقم الطبقة الصحيحة.",
+        "يربط Packet بـL3PDU وFrame بـL2PDU في السياق المناسب."
       ],
-      "assessment_prompt_ar": "اطلب من المتعلم شرح OSI تغليف البيانات المصطلحات في دقيقة واحدة، وذكر متطلب سابق واحد وتطبيق عملي واحد.",
+      "assessment_prompt_ar": "اعرض وحدتي بيانات إحداهما حزمة IP والأخرى إطار ربط بيانات، واطلب من المتعلم تسميتهما باستخدام مصطلحات OSI.",
       "commands": [],
       "lab": {
         "suitable": false,
@@ -5271,10 +5572,23 @@
       "coverage_status": "SOURCE_COVERED",
       "review": {
         "source_heading": "VERIFIED",
-        "arabic_translation": "RULE_ASSISTED_DRAFT",
-        "summary": "ORIGINAL_MACHINE_DRAFT",
+        "arabic_translation": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "summary": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
         "relationships": "RULE_INFERRED",
-        "expert_review_required": true
+        "expert_review_required": true,
+        "mastery_evidence": "SOURCE_GROUNDED_EDITORIAL_DRAFT",
+        "assessment": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+      },
+      "editorial": {
+        "content_version": "0.2.0-dev.1",
+        "patch_id": "v1-c01-editorial-2026-07-28",
+        "status": "AWAITING_EXPERT_REVIEW",
+        "source_basis": {
+          "source_id": "book-v1",
+          "chapter": 1,
+          "printed_pages": "14-30",
+          "method": "SOURCE_GROUNDED_EDITORIAL_DRAFT"
+        }
       }
     },
     {
