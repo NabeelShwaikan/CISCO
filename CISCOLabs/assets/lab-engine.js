@@ -1,1 +1,28 @@
-
+(function(){
+  "use strict";
+  const t=window.CISCO_TOPIC;
+  if(!t){document.body.innerHTML='<p style="color:white;padding:2rem">تعذر تحميل بيانات الموضوع.</p>';return}
+  const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  document.title=t.title+' | منصة تدريب سيسكو';
+  $('#topicTitle').textContent=t.title; $('#topicCode').textContent=t.code; $('#topicLead').textContent=t.lead; $('#missionTitle').textContent=t.scenario.title; $('#missionText').textContent=t.scenario.text;
+  $('#level').textContent=t.level; $('#duration').textContent=t.duration; $('#assumption').textContent=t.assumption;
+  $('#risks').innerHTML=t.scenario.risks.map(x=>`<div class="risk">${esc(x)}</div>`).join('');
+  $('#prerequisites').innerHTML=t.prerequisites.map(x=>`<li>${esc(x)}</li>`).join(''); $('#outcomes').innerHTML=t.outcomes.map(x=>`<li>${esc(x)}</li>`).join(''); $('#topology').textContent=t.topology;
+  let saved=[];try{saved=JSON.parse(localStorage.getItem('ccna-progress-'+t.slug)||'[]')}catch{}const done=new Set(Array.isArray(saved)?saved:[]);
+  $('#steps').innerHTML=t.steps.map((s,i)=>`<article class="step"><div class="step-no">${String(i+1).padStart(2,'0')}</div><div class="step-copy"><span>${esc(s.phase)}</span><h3>${esc(s.title)}</h3><p>${esc(s.why)}</p></div><button class="run-btn${done.has(i)?' done':''}" data-step="${i}" type="button">شاهد التنفيذ ◀</button></article>`).join('');
+  $('#verifyGrid').innerHTML=t.verification.map(v=>`<div class="verify-item"><code>${esc(v.command)}</code><span>${esc(v.expected)}</span></div>`).join('');
+  $('#challengeText').textContent=t.challenge.question; $('#challengeOptions').innerHTML=t.challenge.options.map((x,i)=>`<button class="choice" data-choice="${i}" type="button">${esc(x)}</button>`).join('');
+  const modal=$('#modal'), output=$('#output'), cursor=$('#cursor'), stepTitle=$('#stepTitle'), stepExplain=$('#stepExplain'); let active=0,timer=null,audio=null,muted=localStorage.getItem('ccna-muted')==='1',lastFocus=null;
+  $('#sound').textContent=muted?'×':'♪';
+  function progress(){const n=done.size;$('#progressText').textContent=`${n} / ${t.steps.length}`;$('#progressBar').style.width=(n/t.steps.length*100)+'%';const p=$('#progressTrack');p.setAttribute('aria-valuemax',t.steps.length);p.setAttribute('aria-valuenow',n)} progress();
+  function ensureAudio(){if(muted)return;if(!audio)audio=new(window.AudioContext||window.webkitAudioContext)();if(audio.state==='suspended')audio.resume()}
+  function tickSound(ch){if(muted||!audio||ch===' ')return;const n=audio.currentTime,o=audio.createOscillator(),g=audio.createGain();o.type=Math.random()>.5?'square':'triangle';o.frequency.value=620+Math.random()*500;g.gain.setValueAtTime(.014,n);g.gain.exponentialRampToValueAtTime(.0001,n+.02);o.connect(g);g.connect(audio.destination);o.start(n);o.stop(n+.022)}
+  function finish(){cursor.hidden=true;done.add(active);localStorage.setItem('ccna-progress-'+t.slug,JSON.stringify([...done]));document.querySelector(`[data-step="${active}"]`).classList.add('done');progress()}
+  function play(){clearTimeout(timer);const s=t.steps[active],text=s.lines.join('\n');let p=0;output.textContent='';cursor.hidden=false;stepTitle.textContent=s.title;stepExplain.textContent=s.why;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced){output.textContent=text;finish();return}function next(){if(p>=text.length){finish();return}const c=text[p++];output.textContent+=c;tickSound(c);$('.screen').scrollTop=$('.screen').scrollHeight;timer=setTimeout(next,c==='\n'?100:10+Math.random()*17)}next()}
+  function open(i,button){active=i;lastFocus=button;ensureAudio();modal.classList.add('open');$('#pageShell').inert=true;$('#pageShell').setAttribute('aria-hidden','true');document.body.style.overflow='hidden';play();$('#close').focus()}
+  function close(){clearTimeout(timer);modal.classList.remove('open');$('#pageShell').inert=false;$('#pageShell').removeAttribute('aria-hidden');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+  $('#steps').addEventListener('click',e=>{const b=e.target.closest('[data-step]');if(b)open(+b.dataset.step,b)});$('#close').onclick=close;modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))close();if(e.key==='Tab'&&modal.classList.contains('open')){const f=[...modal.querySelectorAll('button:not([disabled]),[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(x=>x.offsetParent!==null);if(!f.length)return;const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+  $('#sound').onclick=()=>{muted=!muted;localStorage.setItem('ccna-muted',muted?'1':'0');$('#sound').textContent=muted?'×':'♪';$('#sound').setAttribute('aria-label',muted?'تشغيل الصوت':'كتم الصوت');if(!muted)ensureAudio()};
+  $('#skip').onclick=()=>{clearTimeout(timer);output.textContent=t.steps[active].lines.join('\n');finish()};$('#replay').onclick=()=>{ensureAudio();play()};
+  $('#challengeOptions').addEventListener('click',e=>{const b=e.target.closest('[data-choice]');if(!b)return;document.querySelectorAll('.choice').forEach(x=>x.classList.remove('correct','wrong'));const ok=+b.dataset.choice===t.challenge.correct;b.classList.add(ok?'correct':'wrong');$('#feedback').textContent=ok?'إجابة صحيحة: '+t.challenge.success:'ليست الإجابة الأنسب. تلميح: '+t.challenge.hint});
+})();
